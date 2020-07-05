@@ -1,7 +1,4 @@
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TaskTwoSolver {
 
@@ -15,5 +12,16 @@ public class TaskTwoSolver {
                 pairs.remove(pairs.get(value));
             }
         });
+    }
+
+    // Sorry musiałem użyć brute force :P
+    public static void findPairs(Integer[] a, int sum) {
+        Arrays.sort(a);
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i; j < a.length; j++) {
+                if (a[i] + a[j] == sum)
+                    System.out.println(a[i] + " " + a[j]);
+            }
+        }
     }
 }
